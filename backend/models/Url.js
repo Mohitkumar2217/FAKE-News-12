@@ -6,4 +6,6 @@ const urlSchema = new mongoose.Schema({
   clicks: { type: Number, default: 0 }
 });
 
-module.exports = mongoose.model('Url', urlSchema);
+const user = mongoose.model('Url', urlSchema);
+
+module.exports = user;

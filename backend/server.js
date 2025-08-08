@@ -10,10 +10,8 @@ app.use(express.json());
 const urlRoutes = require('./routes/url');
 app.use('/', urlRoutes);
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => console.log('✅ MongoDB connected'))
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/urlshortener")
+  .then(() => console.log('✅ MongoDB connected'))
   .catch(err => console.error('❌ MongoDB connection error:', err));
 
 const PORT = process.env.PORT || 5000;
