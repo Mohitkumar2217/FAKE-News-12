@@ -2,9 +2,9 @@ import streamlit as st
 import joblib
 
 vectorizer = joblib.load("models/vectorizer1.jb")
-model = joblib.load("models/lr_model1.jb")
+model = joblib.load("models/model1.jb")
 
-st.title("Fake News Detector")
+st.title("News Filter")
 st.write("Enter a News Article below to check whether it is Fake or Real. ")
 
 inputn = st.text_area("News Article:","")
